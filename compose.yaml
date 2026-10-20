@@ -1,0 +1,13 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Containerfile
+    image: fungiverse-api:0.1.0
+    container_name: fungiverse-api
+    ports:
+      - "8000:8000"
+    init: true
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
